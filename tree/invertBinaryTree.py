@@ -1,9 +1,11 @@
 class TreeNode:
+    # Binary Tree Node
     def __init__(self, value=None):
         self.left = None
         self.right = None
         self.value = value
 
+    # Method to insert node into tree
     def insert(self, value):
 
         if self.value is None:
@@ -21,6 +23,7 @@ class TreeNode:
             else:
                 self.right.insert(value)
 
+    # Method to find a node in a tree
     def find(self, value):
         if value < self.value:
             if self.left is None:
@@ -35,6 +38,8 @@ class TreeNode:
         else:
             return True
 
+###############################################################
+    # Function to invert a binary tree
     def invertTree(self, root):
 
         if root == None:
@@ -48,7 +53,9 @@ class TreeNode:
         self.invertTree(root.right)
 
         return root
+###############################################################
 
+    # Method to display tree in inorder traversal
     def inOrderTraversal(self):
         if self.left:
             self.left.inOrderTraversal()
@@ -56,6 +63,7 @@ class TreeNode:
         if self.right:
             self.right.inOrderTraversal()
 
+    # Method to display tree in preorder traversal
     def preOrderTraversal(self):
         print(self.value, end='  ')
         if self.left:
@@ -63,6 +71,7 @@ class TreeNode:
         if self.right:
             self.right.preOrderTraversal()
 
+    # Method to display tree in postorder traversal
     def postOrderTraversal(self):
         if self.left:
             self.left.postOrderTraversal()
@@ -70,6 +79,7 @@ class TreeNode:
             self.right.postOrderTraversal()
         print(self.value, end='  ')
 
+    # Method to display tree visually 
     def display(self):
         lines, *_ = self._display_aux()
         for line in lines:
@@ -123,7 +133,7 @@ class TreeNode:
             [a + u * ' ' + b for a, b in zipped_lines]
         return lines, n + m + u, max(p, q) + 2, n + u // 2
 
-
+# Insert Nodes into Tree
 tree = TreeNode()
 tree.insert(4)
 tree.insert(2)
@@ -133,9 +143,11 @@ tree.insert(3)
 tree.insert(6)
 tree.insert(9)
 
+# Display tree visually
 print("\nPrint Tree")
 tree.display()
 
+# Print Traversals of tree
 print("\nInorder Traversal")
 tree.inOrderTraversal()
 print("\nPreOrder Traversal")
@@ -143,9 +155,10 @@ tree.preOrderTraversal()
 print("\nPostOrder Traversal")
 tree.postOrderTraversal()
 
-# --------------------------------------
-
+#############################
+# Invert Tree and display 
 print(" ")
 print("\nPrint Inverted Tree")
 invertedTree = tree.invertTree(tree)
 invertedTree.display()
+#############################
