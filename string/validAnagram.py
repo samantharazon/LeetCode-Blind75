@@ -11,11 +11,12 @@ def validAnagram(s: str, t: str):
 
     for i in range(len(s)):
 
-        countS[s[i]] = 1 + countS.get(s[i], 0)
+        countS[s[i]] = 1 + countS.get(s[i], 0)  # increment count value by adding 1. 
+                                                # why use get method? if character (key) doesn't exist, intialize to 0.
         countT[t[i]] = 1 + countT.get(t[i], 0)
     
     for c in countS:
-        if countS[c] != countT.get(c, 0):
+        if countS[c] != countT.get(c, 0): # why use get? if character (key) exists in S but not C, initialize to 0 in C
             return False
 
     return True

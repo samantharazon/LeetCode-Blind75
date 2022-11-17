@@ -14,7 +14,8 @@ def romanToInt(s):
     res = 0
 
     for i in range(len(s)):
-        if i + 1 < len(s) and roman[s[i]] < roman[s[i + 1]]:    # check if in bounds and if character at i is smaller than after i
+        if i + 1 < len(s) and roman[s[i]] < roman[s[i + 1]]:    # check if it's in bounds and...
+                                                                # if character at i is smaller than after i
             res -= roman[s[i]]
         else:
             res += roman[s[i]]

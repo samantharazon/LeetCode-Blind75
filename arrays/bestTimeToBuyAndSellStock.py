@@ -1,20 +1,20 @@
 def maxProfit(prices) -> int:
-    l = 0   # buy
-    r = 1   # sell
-    maxP = 0
+    left_buy = 0   # buy
+    right_sell = 1   # sell
+    maxProfit = 0
 
-    while r < len(prices):
+    while right_sell< len(prices):
 
         # if statement to find right day to buy. continue moving l by one if value next to it is less
-        if prices[l] < prices[r]:
+        if prices[left_buy] < prices[right_sell]:
             # also find day to sell
-            profit = prices[r] - prices[l]
-            maxP = max(maxP, profit)
+            profit = prices[right_sell] - prices[left_buy]
+            maxProfit = max(maxProfit, profit)
         else:
-            l = r
-        r += 1
+            left_buy= right_sell
+        right_sell += 1
 
-    return maxP
+    return maxProfit
 
 
 prices = [7,5,1,3,6,4]

@@ -15,7 +15,7 @@ def isPalindrome(s: str) -> bool:
     return True
 
 
-s = "A man, a plan, a canal: Panama"
+s = "A man, a plan, a canal: Panama<{]':/?"
 result = isPalindrome(s)
 print(s)
 print("\nIs Palindrome: ", result)

@@ -41,7 +41,7 @@ class LinkedList:
                 return None
         return current
 
-####################################
+###############################################################
 # Function to determine if the linked list has a cycle in it.
 def hasCycle(head):
     slow = head
