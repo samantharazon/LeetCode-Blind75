@@ -10,36 +10,23 @@
 #
 
 def topKFrequent(nums: list[int], k):
-    #####################################################################
-    # (1) Creating "Count" dictionary & storing number of times number occurs
+    
     # {1: 3 times,      2: 2 times,     3: 1 time}
-    countDict = {}
-
+    countDict = {}                                              # Creating "Count" dictionary & storing number of times number occurs
     for number in nums:
         countDict[number] = 1 + countDict.get(number, 0)
     
-    #####################################################################
-    # (2) Creating "frequency" array  << Index=Number Value=Count >>
-    # w/ index representing number & value representing count
-    # 0: []  1: []  2: []  3:[]  4:[]  5:[]  6:[] 
-    freq = [ [] for i in range(len(nums) + 1) ]
+     # 0: []  1: []  2: []  3:[]  4:[]  5:[]  6:[] 
+    freq = [ [] for i in range(len(nums) + 1) ]                 # Creating "frequency" array  -->> Index=Number Value=Counf
 
-    # NOTE: countDict uses key-value pair as [number : count]
-    # in frequency, using the VALUE:count as the index, append to list the KEY:number
-    # 0: []  1: [3]  2: [2]  3:[1]  4:[]  5:[]  6:[] 
-    for number, count in countDict.items():
+    # 0: []  1count: [3num]  2count: [2num]  3count:[1num]  4:[]  5:[]  6:[] 
+    for number, count in countDict.items(): 
         freq[count].append(number)
-
-    #####################################################################
-    # (3) Creating "result" array & calculating most frequent k values to display
-    res = []
-
-    # NOTE: range(starting_index, last_index, increment)
-    # traverse below array from end to beginning and append to res
-    # when length of res equals k, stop
-    # 0: []  1: [3]  2: [2]  3:[1]  4:[]  5:[]  6:[] 
-    for i in range(len(freq)-1, -1, -1):
-
+   
+   # loop backward
+    res = []                                                    # Creating "result" array & calculating most frequent k values to display                  
+    for i in range(len(freq)-1, -1, -1):                        # traverse below array from end to beginning and append to res NOTE: range(starting_index, last_index, increment)
+                                                                # when length of res equals k, stop
         for number in freq[i]:
             res.append(number)
 
@@ -50,16 +37,22 @@ def topKFrequent(nums: list[int], k):
 nums = [1,1,1, 2,2, 3]
 k = 2
 result = topKFrequent(nums, k)
+print(nums)
+print(k)
 print("\nResult: ", result)
 
 nums = [1]
 k = 1
 result = topKFrequent(nums, k)
+print(nums)
+print(k)
 print("\nResult: ", result)
 
 nums = [1,1,  2,2,2,2,  3,  4,4,  5,5,5,  6,6,6,6,6,6]
 k = 3
 result = topKFrequent(nums, k)
+print(nums)
+print(k)
 print("\nResult: ", result)
 
 
