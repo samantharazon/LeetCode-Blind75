@@ -1,4 +1,12 @@
 
+
+#CONTAINS DUPLICATE - EASY
+#TWO SUM - EASY
+
+#VALID ANAGRAM - GOOD
+#sGROUP ANAGRAMS - GOOD
+
+
 from collections import defaultdict
 
 def groupAnagrams (strs: list[str]):
