@@ -1,7 +1,10 @@
 def threeSum(nums: list[int]) -> list[list[int]]:
     
     res = []
-    nums.sort()
+    nums.sort()     # -4, -1, -1, 0, 1, 2
+
+
+    # -4=a   |  -1=b  -1  0  1  2=c
 
     for index, a_value in enumerate(nums): # iterating through nums. keeping track of index and current value
         # Find (a)...
