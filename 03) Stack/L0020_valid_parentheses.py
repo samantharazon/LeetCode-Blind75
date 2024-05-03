@@ -10,14 +10,13 @@ def isValid(s: str) -> bool:
     for i in s:
         if i in dict.keys():
             stack.append(i)
-
         else:
             if stack == []:
                 return False
-
+            
             a = stack.pop()
 
-            if i != dict[a]:    # look at the value of key "a" in dictionary. if the value "a" doesn't match key "i", it's false
+            if i != dict[a]:   
                 return False
 
     return stack == []

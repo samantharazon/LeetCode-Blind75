@@ -1,32 +1,17 @@
 
-# [1, 1, 1, 2, 2, 3, 4, 4, 4]
-#
-# three 1's, two 2's, one 3, three 4's
-#
-# i(count)  0   1   2      3     4   5   6   (6 is length of array)
-# values       [3] [2]  [1, 4]
-#
-# go from left to right
-#
-
 def topKFrequent(nums: list[int], k):
     
-    # {1: 3 times,      2: 2 times,     3: 1 time}
-    countDict = {}                                              # Creating "Count" dictionary & storing number of times number occurs
+    countDict = {}
     for number in nums:
         countDict[number] = 1 + countDict.get(number, 0)
     
-     # 0: []  1: []  2: []  3:[]  4:[]  5:[]  6:[] 
-    freq = [ [] for i in range(len(nums) + 1) ]                 # Creating "frequency" array  -->> Index=Number Value=Counf
+    freq = [ [] for i in range(len(nums) + 1) ] 
 
-    # 0: []  1count: [3num]  2count: [2num]  3count:[1num]  4:[]  5:[]  6:[] 
     for number, count in countDict.items(): 
         freq[count].append(number)
    
-   # loop backward
-    res = []                                                    # Creating "result" array & calculating most frequent k values to display                  
-    for i in range(len(freq)-1, -1, -1):                        # traverse below array from end to beginning and append to res NOTE: range(starting_index, last_index, increment)
-                                                                # when length of res equals k, stop
+    res = []  
+    for i in range(len(freq)-1, -1, -1):
         for number in freq[i]:
             res.append(number)
 

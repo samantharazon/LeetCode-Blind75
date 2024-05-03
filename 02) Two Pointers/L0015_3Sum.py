@@ -1,21 +1,14 @@
 def threeSum(nums: list[int]) -> list[list[int]]:
-    
     res = []
-    nums.sort()     # -4, -1, -1, 0, 1, 2
+    nums.sort()   
 
-
-    # -4=a   |  -1=b  -1  0  1  2=c
-
-    for index, a_value in enumerate(nums): # iterating through nums. keeping track of index and current value
-        # Find (a)...
-        if index > 0 and a_value == nums[index - 1]:  # don't reuse value
+    for index, a_value in enumerate(nums): 
+        if index > 0 and a_value == nums[index - 1]:
             continue
 
         l = index + 1
         r = len(nums) - 1
 
-        # Find (b) and (c)...
-        # 2SumII Solution:
         while l < r:
             sumThree = a_value + nums[l] + nums[r]
             if sumThree > 0:
@@ -25,10 +18,8 @@ def threeSum(nums: list[int]) -> list[list[int]]:
             else:
                 res.append([a_value, nums[l], nums[r]])
                 l += 1
-                # if it's same value, keep shifting && don't pass right pointer
                 while nums[l] == nums[l - 1] and l < r:
                     l += 1
-
     return res
 
 
@@ -38,14 +29,6 @@ print("\nnums: ", nums)
 print("result: ", result)
 print()
 # Output: [[-1,-1,2],[-1,0,1]]
-'''
-Explanation: 
-nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
-nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
-nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
-The distinct triplets are [-1,0,1] and [-1,-1,2].
-Notice that the order of the output and the order of the triplets does not matter.
-'''
 
 nums = [-3, 3, 4, -3, 1, 2]
 result = threeSum(nums)

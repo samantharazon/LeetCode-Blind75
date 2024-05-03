@@ -1,18 +1,14 @@
 def maxArea(height: list[int]) -> int:
-        # LINEAR TIME SOLUTION: O(n)
         res = 0
         l = 0
         r = len(height) - 1
         
         while l < r:
-            # area = width * length
             area = (r - l) * min(height[l], height[r])
             res = max(res, area)
 
-            # shift over by whichever of two is the min value
             if height[l] < height[r]:
                 l += 1
-            else: # if they are both equal, (doesn't matter which one we increment)
                 r -= 1
         
         return res

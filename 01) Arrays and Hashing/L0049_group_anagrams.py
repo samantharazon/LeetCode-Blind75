@@ -1,25 +1,25 @@
 from collections import defaultdict
 
 def groupAnagrams (strs: list[str]):
-                            # defaultdict(list) means "Defining a dictionary with values as a list"
-    res = defaultdict(list) # {0 1 0 1: eat, tea, ate}  
-                            # {0 0 0 1: nat, tan}
+    
+    # goal:   {0 1 0 1 ... 0 0: eat, tea, ate} 
+    # means:  {a thru z letters :  matching words }
+
+    # defaultdict auto assigns default value to non-existent key
+    res = defaultdict(list)
     
     for word in strs:
-        count = [0] * 26 # create an array: making 26 zero's --> a...z has 26 letters
-                         # 0 0 0 0 0 ....
+        # count = 0(letterA), 0(letterB), 0(letterC)...
+        # 0 = does not appear, 1 = appear once, 2 = appear twice..
+        count = [0] * 26 
 
         for letter in word: 
-            count[ord(letter) - ord("a")] += 1  # map 'a' to index 0... map 'z' to index 25.
-                                                # add a 1 to the value (how many times it appears)
-                                                # (Ex) a) 65 - 65 = 0  (map 'a' to index 0)
-                                                # (Ex) b) 66 - 65 = 1  (map 'b' to index 1)
-                                                # (Ex) z) 90 - 65 = 25 (map 'z' to index 25)
-                                                # find index of current letter & add 1 to value
-                                                # 0 1 0 0 1 0
+             # map 'a' to index 0... map 'z' to index 25.
+            count[ord(letter) - ord("a")] += 1 
                                              
-                                        # create key-value pair [count, words]  [0 0 1 0 0 1: eat]
-        res[tuple (count)].append(word) # in res, find where key (count) appears & append value s (the word) to end of list
+        # find where count appears & append word
+        # [count, words]  ---> {0 1 0 1 ... 0 0, eat, tea, ate} 
+        res[tuple (count)].append(word) 
 
     return res.values()
     
