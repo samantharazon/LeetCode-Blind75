@@ -1,14 +1,20 @@
 def threeSum(nums: list[int]) -> list[list[int]]:
     res = []
-    nums.sort()   
+    nums.sort()    # -4, -1, -1, 0, 1, 2
+
+     # -4=(a)   |  -1=(b)  -1  0  1  2=(c)
+     #                L               R
 
     for index, a_value in enumerate(nums): 
+        # Find (a)...
         if index > 0 and a_value == nums[index - 1]:
             continue
 
         l = index + 1
         r = len(nums) - 1
 
+        # Find (b) and (c)...
+        # 2SumII Solution:
         while l < r:
             sumThree = a_value + nums[l] + nums[r]
             if sumThree > 0:
@@ -18,6 +24,7 @@ def threeSum(nums: list[int]) -> list[list[int]]:
             else:
                 res.append([a_value, nums[l], nums[r]])
                 l += 1
+                # if it's same value, keep shifting && don't pass right pointer
                 while nums[l] == nums[l - 1] and l < r:
                     l += 1
     return res

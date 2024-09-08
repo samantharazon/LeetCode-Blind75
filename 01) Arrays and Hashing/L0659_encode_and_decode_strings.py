@@ -1,22 +1,26 @@
-
+# encodes a list of strings to a single string
+# Encoded:  4#lint4#code4#love3#you
 def encode(input):
     res = ""
     for word in input:
-        res += str(len(word)) + "#" + word 
+        res += str(len(word)) + "#" + word # length of word + # + word
+    print(res)
     return res
 
+# decodes a single string to a list of strings 
+# Decoded:  ['lint', 'code', 'love', 'you'] 
 def decode(input):
-    res, curr_pos = [], 0 
+    res, index_len = [], 0 
 
-    while curr_pos < len(input):  
-        pound_pos = curr_pos       
+    while index_len < len(input):  
+        pound_pos = index_len       
 
         while input[pound_pos] != "#":
             pound_pos += 1          
 
-        length = int(input[curr_pos:pound_pos]) 
-        res.append(input[pound_pos+1 : pound_pos+1+length]) 
-        curr_pos = pound_pos + 1 + length 
+        actual_len = int(input[index_len:pound_pos]) # get value at index where we placed length of word
+        res.append(input[pound_pos+1 : pound_pos+1+actual_len]) # add the word to res
+        index_len = pound_pos + 1 + actual_len # update current position
         
     return res
 
