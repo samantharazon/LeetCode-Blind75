@@ -1,10 +1,10 @@
 
 def validSudoku(board):
-
     # create an array containing 9 sets
-    # [set1, set2, set3 ... set9]
+    # [set1, set2, set3 ... set9]    
     cols = [set() for x in range(9)]
     rows = [set() for x in range(9)]
+
     # create an array containing 3 arrays + each array contains 3 sets
     # [ [set1..set3]  [set1..set3] [set1...set3] ]
     squares = [[set() for x in range(3)] for y in range(3)]
@@ -13,8 +13,7 @@ def validSudoku(board):
         for col in range(9):
             cell_value = board[row][col]
             if cell_value == ".":
-                # end current iter in loop + go to the next iter.
-                continue
+                continue   # end current iter in loop + go to the next iter.
             # if cell_value found, return False
             if (cell_value in rows[row] or
                 cell_value in cols[col] or

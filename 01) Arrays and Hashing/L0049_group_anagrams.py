@@ -1,28 +1,34 @@
 from collections import defaultdict
 
-def groupAnagrams (strs: list[str]):
-    
-    # goal:   {0 1 0 1 ... 0 0: eat, tea, ate} 
-    # means:  {a thru z letters :  matching words }
+def groupAnagrams(str_array):
+    # goal:   {aet: [eat, tea, ate],  ant: [tan, nat]}
+    anagram_map = defaultdict(list) # defaultdict never raises a KeyError. 
+    for word in str_array:
+       sorted_word = ''.join(sorted(word)) # '' is separator between each letter 
+       anagram_map[sorted_word].append(word)
+    # print(dict(anagram_map))
+    return list(anagram_map.values())
 
-    # defaultdict auto assigns default value to non-existent key
-    res = defaultdict(list)
+
+def groupAnagrams_NEETCODE (strs: list[str]):
+    # goal:   {0 1 0 1 ... 0 0: [eat, tea, ate]} 
+    # means:  {a thru z letters :  matching words }
+    res = defaultdict(list) # defaultdict auto assigns default value to non-existent key
     
     for word in strs:
-        # count = 0(letterA), 0(letterB), 0(letterC)...
-        # 0 = does not appear, 1 = appear once, 2 = appear twice..
-        count = [0] * 26 
+        count = [0] * 26 # [0 1 0 1 ...]    0 = does not appear, 1 = appear once, 2 = appear twice..
 
         for letter in word: 
-             # map 'a' to index 0... map 'z' to index 25.
-            count[ord(letter) - ord("a")] += 1 
+            count[ord(letter) - ord("a")] += 1 # map 'a' to index 0...   map 'z' to index 25.
                                              
-        # find where count appears & append word
-        # [count, words]  ---> {0 1 0 1 ... 0 0, eat, tea, ate} 
-        res[tuple (count)].append(word) 
-
+        res[tuple (count)].append(word)  # find where count appears & append word 
     return res.values()
-    
+    '''
+    res = {
+    (1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0): ['eat', 'tea', 'ate'], 
+    (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0): ['tan', 'nat'], 
+    (1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0): ['bat']})
+    '''
 
 strs = ["eat","tea","tan","ate","nat","bat"]
 result = groupAnagrams(strs)

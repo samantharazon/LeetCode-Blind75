@@ -4,9 +4,11 @@ def maxArea(height: list[int]) -> int:
         r = len(height) - 1
         
         while l < r:
+            # area = width * length
             area = (r - l) * min(height[l], height[r])
             res = max(res, area)
-
+            
+            # shift over by whichever of two is the min value
             if height[l] < height[r]:
                 l += 1
                 r -= 1
