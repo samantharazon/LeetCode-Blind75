@@ -32,18 +32,17 @@ encoded = encode(input)
 print("\nEncoded: ", encoded)
 decoded = decode(encoded)
 print("Decoded: ", decoded)
-print()
 
 input = ["we", "say", ":", "yes"]
 encoded = encode(input)
 print("\nEncoded: ", encoded)
 decoded = decode(encoded)
 print("Decoded: ", decoded)
-print()
 
 input = ["neet", "code"]
 encoded = encode(input)
 print("\nEncoded: ", encoded)
 decoded = decode(encoded)
 print("Decoded: ", decoded)
-print()
+
+print("\n")

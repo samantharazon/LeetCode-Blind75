@@ -25,12 +25,13 @@ def validSudoku(board):
             rows[row].add(cell_value)
             squares[row//3][col//3].add(cell_value)
 
-    print("\nCOLS: ", cols)
-    print("\nROWS: ", rows)
-    print("\nSQUARES: ", squares)
+    # print("COLS: ", cols)
+    # print("ROWS: ", rows)
+    # print("SQUARES: ", squares)
 
     return True
 
+print("\nSudoku #1)")
 sudoku_board = [  ["5", "3", ".", ".", "7", ".", ".", ".", "."]  # i=0
                 , ["6", ".", ".", "1", "9", "5", ".", ".", "."]  # i=1
                 , [".", "9", "8", ".", ".", ".", ".", "6", "."]  # i=2
@@ -41,9 +42,9 @@ sudoku_board = [  ["5", "3", ".", ".", "7", ".", ".", ".", "."]  # i=0
                 , [".", ".", ".", "4", "1", "9", ".", ".", "5"]  # i=7
                 , [".", ".", ".", ".", "8", ".", ".", "7", "9"]]
 result = validSudoku(sudoku_board)
-print("\nSudoku #1) ", result)  # true
+print("Valid:", result)  # true
 
-
+print("\nSudoku #2)")
 sudoku_board = [["8", "3", ".", ".", "7", ".", ".", ".", "."], 
                 ["6", ".", ".", "1", "9", "5", ".", ".", "."], 
                 [".", "9", "8", ".", ".", ".", ".", "6", "."], 
@@ -54,4 +55,6 @@ sudoku_board = [["8", "3", ".", ".", "7", ".", ".", ".", "."],
                 [".", ".", ".", "4", "1", "9", ".", ".", "5"], 
                 [".", ".", ".", ".", "8", ".", ".", "7", "9"]]
 result = validSudoku(sudoku_board)
-print("\nSudoku #2) ", result)  # true
+print("Valid:", result)  # true
+
+print("\n")

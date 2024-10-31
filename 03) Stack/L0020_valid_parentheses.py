@@ -23,25 +23,23 @@ def isValid(s: str) -> bool:
 
 
 s = "()"
+print(f"\ns: {s}")
 result = isValid(s)
-print("s: ", s)
-print(result)
-print("---------------------")
+print("result:", result)
 
 s = "(){}[]"
+print(f"\ns: {s}")
 result = isValid(s)
-print("s: ", s)
-print(result)
-print("---------------------")
+print("result:", result)
 
 s = "(]"
+print(f"\ns: {s}")
 result = isValid(s)
 print("s: ", s)
-print(result)
-print("---------------------")
+print("result:", result)
 
 s = "(("
+print(f"\ns: {s}")
 result = isValid(s)
 print("s: ", s)
-print(result)
-print("---------------------")
+print("result:", result)

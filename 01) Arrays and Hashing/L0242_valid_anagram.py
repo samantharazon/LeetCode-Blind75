@@ -18,12 +18,14 @@ def validAnagram(s: str, t: str):
 
 word1 = "anagram"
 word2 = "nagaram"
-print("\nword 1:", word1)
-print("word 2:", word2)
+print("\nWord 1:", word1)
+print("Word 2:", word2)
 print("valid:", validAnagram(word1, word2))
 
 word1 = "helloo"
 word2 = "ollehh"
-print("\nword 1:", word1)
-print("word 2:", word2)
+print("\nWord 1:", word1)
+print("Word 2:", word2)
 print("valid:", validAnagram(word1, word2))
+
+print("\n")

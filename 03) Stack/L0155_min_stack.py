@@ -25,9 +25,12 @@ output = []
 m = MinStack()  # []
 m.push(-2)      # [-2]
 m.push(0)       # [-2, 0]
-m.push(-1)      # [-2, 0, -1]
+m.push(-1)      # [-2, 0, -1] <--- top of stack
+
 print("(A)", m.top())      # will return -1
 print("(B)", m.getMin())   # will return -2
+
 m.pop()         # [-2, 0]
+
 print("(C)", m.top())      # will return 0
 print("(D)", m.getMin())   # will return -2

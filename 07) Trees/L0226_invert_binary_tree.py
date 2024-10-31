@@ -157,8 +157,10 @@ tree.postOrderTraversal()
 
 #############################
 # Invert Tree and display 
-print(" ")
-print("\nPrint Inverted Tree")
+print("\n\nPrint Inverted Tree")
 invertedTree = tree.invertTree(tree)
 invertedTree.display()
+print("-----------------------------------")
 #############################
+
+print("\n")

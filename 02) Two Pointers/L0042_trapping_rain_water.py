@@ -22,18 +22,16 @@ def trap(height: list[int]) -> int:
     return res
 
 
-
 height = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
-result = trap(height)
 print("\nheight: ", height)
+result = trap(height)
 print("result: ", result)
-print()
 # Output: 6
 # Explanation: The above elevation map (black section) is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped.
 
 height = [4, 2, 0, 3, 2, 5]
+print("\nheight: ", height)
 result = trap(height)
-print("height: ", height)
 print("result: ", result)
 print()
 # Output: 9

@@ -32,3 +32,5 @@ nums = [-1,1,0,-3,3]
 print("\nnums: ", nums)
 result = productExceptSelf(nums)
 print("result: ", result)
+
+print("\n")

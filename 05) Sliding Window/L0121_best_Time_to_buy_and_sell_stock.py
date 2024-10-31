@@ -18,13 +18,13 @@ def maxProfit(prices) -> int:
 
 
 prices = [7,5,1,3,6,4]
+print(f"\nprices: {prices}")
 result = maxProfit(prices)
-print(prices)
-print("\nMaximum Profit: ", result)
-print("--------------------")
+print("Max Profit", result)
 
 prices = [7,6,4,1,3]
+print(f"\nprices: {prices}")
 result = maxProfit(prices)
-print(prices)
-print("\nMaximum Profit: ", result)
-print("--------------------")
+print("MaxProfit: ", result)
+
+print("\n")

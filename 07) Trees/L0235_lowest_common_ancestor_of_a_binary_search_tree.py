@@ -147,25 +147,20 @@ tree.insert(5)
 print("\nTree")
 tree.display()
 
-##########################################
-
+# FIND LOWEST COMMON ANCESTOR
 p = TreeNode(2)
 q = TreeNode(8) 
-
 result = tree.lowestCommonAncestor(tree, p, q)
 print("\nThe LCA of nodes", p.value, "and", q.value, "is: ", result.value)
-
 
 p = TreeNode(2)
 q = TreeNode(4) 
-
 result = tree.lowestCommonAncestor(tree, p, q)
 print("\nThe LCA of nodes", p.value, "and", q.value, "is: ", result.value)
-
 
 p = TreeNode(8)
 q = TreeNode(9) 
-
 result = tree.lowestCommonAncestor(tree, p, q)
 print("\nThe LCA of nodes", p.value, "and", q.value, "is: ", result.value)
-##########################################
+
+print("\n")

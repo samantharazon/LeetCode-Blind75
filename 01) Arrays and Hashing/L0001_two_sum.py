@@ -37,3 +37,5 @@ print("\nArray: ", nums)
 print("Target: ", target)
 result = twoSum(nums, target)
 print("Indices: ", result)
+
+print("\n")

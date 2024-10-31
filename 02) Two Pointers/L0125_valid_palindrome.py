@@ -22,21 +22,17 @@ def isPalindrome(s: str) -> bool:
     return True
 
 
-s = "\nA man, a plan, a canal: Panama<{]':/?"
+s = "A man, a plan, a canal: Panama<{]':/?"
+print("\ns:", s)
 result = isPalindrome(s)
-print(s)
 print("Is Palindrome: ", result)
-print("--------------------")
 
 s = "race a car"
+print("\ns:", s)
 result = isPalindrome(s)
-print(s)
 print("Is Palindrome: ", result)
-print("--------------------")
 
-s = " "
+s = " =!"
+print("\ns:", s)
 result = isPalindrome(s)
-print(s)
 print("Is Palindrome: ", result)
-print("--------------------")
-print()

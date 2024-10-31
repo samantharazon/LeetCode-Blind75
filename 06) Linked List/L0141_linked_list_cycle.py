@@ -65,31 +65,18 @@ listA.addToList(5)
 listA.addToList(2)
 listA.addToList(0)
 listA.addToList(4)
-
-
-# print list
+print("\nList A: ")
 listA.printList()
 
-# ===================
 # Create the cycle
-# ===================
-
-# listA.head.next.next.next = listA.head
 tail_index = 3
 last_node = listA.get_node(tail_index)
 
 pos_tail_next = 1
 last_node.next = listA.get_node(pos_tail_next)
 
-# ===========================
 # Check if there is a cycle
-# ===========================
-
-# call the has cycle function
 result = hasCycle(listA.head)
-
-# print result
 print("\nCycle:", result)
 
-# print list
-# listA.printList()
+print("\n")

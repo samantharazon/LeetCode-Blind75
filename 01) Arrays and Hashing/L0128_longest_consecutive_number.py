@@ -11,7 +11,6 @@ def longestConsecutive(nums: list[int]):
             longest = max(length, longest)
     return longest
 
-
 nums = [100,4,200,1,3,2]
 print("\nnums = ", nums)
 result = longestConsecutive(nums)
@@ -26,3 +25,5 @@ nums = [9, 343, 543, 10, 7, 894, 8]
 print("\nnums = ", nums)
 result = longestConsecutive(nums)
 print("Output: ", result)
+
+print("\n")

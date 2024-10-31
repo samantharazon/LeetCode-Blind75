@@ -38,23 +38,6 @@ class TreeNode:
 
 ###############################################################
 
-    def isBalanced2(self, root):
-
-        def dfs(root):
-
-            if not root:
-                return [True, 0]
-
-            left = dfs(root.left)
-            right = dfs(root.right)
-            balanced = (left[0] and right[0] and
-                        abs(left[1] - right[1]) <= 1)
-
-            return [balanced, 1 + max(left[1], right[1])]
-
-        return dfs(root)[0]
-
-###############################################################
     def isBalanced(self, root):
         def dfs(root):
             if not root:
@@ -64,17 +47,17 @@ class TreeNode:
             left = dfs(root.left)
             right = dfs(root.right)
 
-            print(f"Node ({root.value}): BALANCED?\tleft[0]={left[0]}, \tright[0]={right[0]}")
-            print(f"Node ({root.value}): HEIGHT?\tleft[1]= {left[1]}, \tright[1]={right[1]}")
-
             balanced = (left[0] and right[0] and abs(left[1] - right[1]) <= 1)
-            
+
+            print(
+                f"Node ({root.value}): BALANCED?\tleft[0]={left[0]}, \tright[0]={right[0]}")
+            print(
+                f"Node ({root.value}): HEIGHT?\tleft[1]= {left[1]}, \tright[1]={right[1]}")
             print(f"Node ({root.value}): balanced = {balanced}")
-            
             print()
-            
+
             return [balanced, 1 + max(left[1], right[1])]
-        
+
         return dfs(root)[0]
 ###############################################################
 
@@ -162,7 +145,7 @@ tree.insert(3)
 tree.insert(6)
 tree.insert(9)
 
-print("\nPrint Tree")
+print("\n(A) Print Tree")
 tree.display()
 
 # print("\nInorder Traversal")
@@ -172,10 +155,8 @@ tree.display()
 # print("\nPostOrder Traversal")
 # tree.postOrderTraversal()
 
-print(" ")
-print(f"Is the tree balanced? {tree.isBalanced(tree)}")
-
-
+print(f"RESULT: Is the tree balanced? {tree.isBalanced(tree)}")
+print("-----------------------------------")
 
 tree2 = TreeNode()
 tree2.insert(50)
@@ -185,9 +166,10 @@ tree2.insert(30)
 tree2.insert(45)
 tree2.insert(10)
 
-print("\nPrint Tree")
+print("\n(B) Print Tree")
 tree2.display()
 
-print(" ")
-print(f"Is the tree balanced? {tree2.isBalanced(tree2)}")
+print(f"RESULT: Is the tree balanced? {tree2.isBalanced(tree2)}")
+print("-----------------------------------")
 
+print("\n")

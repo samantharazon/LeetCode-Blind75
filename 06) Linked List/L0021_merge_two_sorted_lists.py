@@ -67,20 +67,18 @@ listC = LinkedList()
 listA.addToList(5)
 listA.addToList(10)
 listA.addToList(15)
+print("\nList A: ")
+listA.printList()
 
 listB.addToList(2)
 listB.addToList(3)
 listB.addToList(20)
+print("\nList B: ")
+listB.printList()
 
 # Call the merge function
 listC.head = mergeLists(listA.head, listB.head)
-
-
-print("List A: ")
-listA.printList()
-print("\n\nList B: ")
-listB.printList()
-
-# Display merged list
-print("\n\nMerged Linked List is:")
+print("\nMerged Linked List is:")
 listC.printList()
+
+print("\n")
