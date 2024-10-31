@@ -11,7 +11,7 @@ def groupAnagrams(str_array):
     print("dict:", dict(anagram_map))
     return list(anagram_map.values())
 
-''' NEETCODE'S WAY
+''' ALT SOLUTION: NEETCODE
 def groupAnagrams_NEETCODE(strs: list[str]):
     # goal:   {0 1 0 1 ... 0 0: [eat, tea, ate]}
     # means:  {a thru z letters :  matching words }

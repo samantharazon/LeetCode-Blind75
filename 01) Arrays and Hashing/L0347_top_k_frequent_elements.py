@@ -15,7 +15,7 @@ def topKFrequent(nums: list[int], k):
 
     return res
 
-''' SORTDICT
+''' ALT SOLUTIONL: SORT DICT
 def topKFrequent_sortDict(nums: list[int], k):
     countDict = {}
     for i in nums:
@@ -25,7 +25,7 @@ def topKFrequent_sortDict(nums: list[int], k):
     return list(sortedDict.keys())[:k]
 '''
 
-''' NEETCODE
+''' ALT SOLUTION: NEETCODE
 # nums = [1,1,1,1,  6,6,  9]    
 # k= 2
 def topKFrequent_NEETCODE(nums: list[int], k):
