@@ -11,7 +11,7 @@ def twoSum(nums, target: int):
             return [dictionary[complement], i] 
         else:
             # key = nums[i] (future complement to find)
-            # value = index of num in arrray
+            # value = index of num in array
             dictionary[nums[i]] = i 
                             
     return None
