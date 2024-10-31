@@ -38,7 +38,7 @@ class TreeNode:
 
 ###############################################################
 
-    def isBalanced(self, root):
+    def isBalanced2(self, root):
 
         def dfs(root):
 
@@ -55,7 +55,7 @@ class TreeNode:
         return dfs(root)[0]
 
 ###############################################################
-    def isBalanced_LOGS(self, root):
+    def isBalanced(self, root):
         def dfs(root):
             if not root:
                 print("Reached a leaf node, returning [True, 0]")
@@ -70,8 +70,9 @@ class TreeNode:
             balanced = (left[0] and right[0] and abs(left[1] - right[1]) <= 1)
             
             print(f"Node ({root.value}): balanced = {balanced}")
+            
             print()
-
+            
             return [balanced, 1 + max(left[1], right[1])]
         
         return dfs(root)[0]
@@ -173,3 +174,20 @@ tree.display()
 
 print(" ")
 print(f"Is the tree balanced? {tree.isBalanced(tree)}")
+
+
+
+tree2 = TreeNode()
+tree2.insert(50)
+tree2.insert(60)
+tree2.insert(40)
+tree2.insert(30)
+tree2.insert(45)
+tree2.insert(10)
+
+print("\nPrint Tree")
+tree2.display()
+
+print(" ")
+print(f"Is the tree balanced? {tree2.isBalanced(tree2)}")
+
