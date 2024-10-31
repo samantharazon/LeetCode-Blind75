@@ -44,10 +44,9 @@ def topKFrequent(nums: list[int], k):
 
     res = []
     for i in range(k):
-        # find key in counter with highest value.
-        curr_max = max(counter, key=counter.get)
+        curr_max = max(counter, key=counter.get) # find key in counter with highest value.
         res.append(curr_max)
-        counter.pop(curr_max)  # pop highest max # from counter and redo
+        counter.pop(curr_max)  # pop highest max # from counter and restart
 
     return res
 
