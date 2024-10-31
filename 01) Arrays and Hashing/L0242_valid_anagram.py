@@ -16,14 +16,14 @@ def validAnagram(s: str, t: str):
 
     return True
 
-
-
 word1 = "anagram"
 word2 = "nagaram"
-
-print(validAnagram(word1, word2))
+print("\nword 1:", word1)
+print("word 2:", word2)
+print("valid:", validAnagram(word1, word2))
 
 word1 = "helloo"
 word2 = "ollehh"
-
-print(validAnagram(word1, word2))
+print("\nword 1:", word1)
+print("word 2:", word2)
+print("valid:", validAnagram(word1, word2))

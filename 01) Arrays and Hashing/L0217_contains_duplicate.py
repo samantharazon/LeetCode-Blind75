@@ -9,16 +9,16 @@ def containsDuplicate(nums):
 
 
 nums = [1,2,3,1]
+print("\nnums: ", nums)
 result = containsDuplicate(nums)
-print("nums: ", nums)
 print("result: ", result)
 
 nums = [1,2,3,4]
-result = containsDuplicate(nums)
 print("\nnums: ", nums)
+result = containsDuplicate(nums)
 print("result: ", result)
 
 nums = [1,1,1,3,3,4,3,2,4,2]
-result = containsDuplicate(nums)
 print("\nnums: ", nums)
+result = containsDuplicate(nums)
 print("result: ", result)

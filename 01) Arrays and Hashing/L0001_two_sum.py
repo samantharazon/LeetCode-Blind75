@@ -18,53 +18,22 @@ def twoSum(nums, target: int):
 
 nums = [11, 2, 15, 7]
 target = 9
-result = twoSum(nums, target)
-print("Array: ", nums)
+print("\nArray: ", nums)
 print("Target: ", target)
-print("\nIndices: ", result)
-print("--------------------------")
+result = twoSum(nums, target)
+print("Indices: ", result)
+
 
 nums = [3, 2, 4]
 target = 6
-result = twoSum(nums, target)
-print("Array: ", nums)
+print("\nArray: ", nums)
 print("Target: ", target)
-print("\nIndices: ", result)
-print("--------------------------")
+result = twoSum(nums, target)
+print("Indices: ", result)
 
 nums = [3, 3]
 target = 6
-result = twoSum(nums, target)
-print("Array: ", nums)
+print("\nArray: ", nums)
 print("Target: ", target)
-print("\nIndices: ", result)
-print("--------------------------")
-
-
-print("=============================")
-print("=============================")
-thisdict = {
-  3: 0,
-  2: 1,
-  4: 2
-}
-print([thisdict[2]])
-print("=============================")
-print("=============================")
-
-
-# def twoSum(nums, target: int):
-
-#     dictionary = {}
-
-#     for i in range(len(nums)):
-
-#         num = nums[i]   # current value in nums array
-#         complement = target - num
-
-#         if num in dictionary:
-#             return [dictionary[num], i] # [find key and print its value, print current i]
-#         else:
-#             dictionary[complement] = i  # store complement at current i
-
-#     return None
+result = twoSum(nums, target)
+print("Indices: ", result)

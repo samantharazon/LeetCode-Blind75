@@ -6,7 +6,7 @@ def groupAnagrams(str_array):
     for word in str_array:
        sorted_word = ''.join(sorted(word)) # '' is separator between each letter 
        anagram_map[sorted_word].append(word)
-    # print(dict(anagram_map))
+    print("dict:", dict(anagram_map))
     return list(anagram_map.values())
 
 
@@ -31,7 +31,6 @@ def groupAnagrams_NEETCODE (strs: list[str]):
     '''
 
 strs = ["eat","tea","tan","ate","nat","bat"]
+print("\nstrs:", strs)
 result = groupAnagrams(strs)
-print("\n")
-print(result) 
-print("\n")
+print("result=", result) 

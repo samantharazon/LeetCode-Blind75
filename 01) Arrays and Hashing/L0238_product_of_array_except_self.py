@@ -14,21 +14,21 @@ def productExceptSelf(nums):
     return res
 
 nums = [1,2,3,4]
-result = productExceptSelf(nums)
 print("\nnums: ", nums)
+result = productExceptSelf(nums)
 print("result: ", result)
 
 nums = [2,3,4,5]
-result = productExceptSelf(nums)
 print("\nnums: ", nums)
+result = productExceptSelf(nums)
 print("result: ", result)
 
 nums = [1,2,3,4]
-result = productExceptSelf(nums)
 print("\nnums: ", nums)
+result = productExceptSelf(nums)
 print("result: ", result)
 
 nums = [-1,1,0,-3,3]
-result = productExceptSelf(nums)
 print("\nnums: ", nums)
+result = productExceptSelf(nums)
 print("result: ", result)
