@@ -1,6 +1,5 @@
 from collections import defaultdict
 
-
 def groupAnagrams(str_array):
     # goal:   {aet: [eat, tea, ate],  ant: [tan, nat]}
     anagram_map = defaultdict(list)  # defaultdict never raises a KeyError.
@@ -10,6 +9,7 @@ def groupAnagrams(str_array):
         anagram_map[sorted_word].append(word)
     print("dict:", dict(anagram_map))
     return list(anagram_map.values())
+
 
 ''' ALT SOLUTION: NEETCODE
 def groupAnagrams_NEETCODE(strs: list[str]):

@@ -1,34 +1,25 @@
+from collections import defaultdict
 
 def validSudoku(board):
-    # create an array containing 9 sets
-    # [set1, set2, set3 ... set9]    
-    cols = [set() for x in range(9)]
-    rows = [set() for x in range(9)]
+    cols = defaultdict(set)     # [set1, set2, set3 ... set9]  
+    rows = defaultdict(set)     # [set1, set2, set3 ... set9]  
+    squares = defaultdict(set)  # [ [set1..set3]  [set1..set3] [set1...set3] ]
 
-    # create an array containing 3 arrays + each array contains 3 sets
-    # [ [set1..set3]  [set1..set3] [set1...set3] ]
-    squares = [[set() for x in range(3)] for y in range(3)]
+    for r in range(9):
+        for c in range(9):
+            cell_value = board[r][c]
 
-    for row in range(9):
-        for col in range(9):
-            cell_value = board[row][col]
             if cell_value == ".":
-                continue   # end current iter in loop + go to the next iter.
-            # if cell_value found, return False
-            if (cell_value in rows[row] or
-                cell_value in cols[col] or
-                    cell_value in squares[row//3][col//3]):
+                continue
+
+            if (cell_value in cols[c] or
+                cell_value in rows[r] or
+                cell_value in squares[(r//3, c//3)]):
                 return False
-
-            # update hashset
-            cols[col].add(cell_value)
-            rows[row].add(cell_value)
-            squares[row//3][col//3].add(cell_value)
-
-    # print("COLS: ", cols)
-    # print("ROWS: ", rows)
-    # print("SQUARES: ", squares)
-
+            
+            cols[c].add(cell_value)
+            rows[r].add(cell_value)
+            squares[(r//3, c//3)].add(cell_value)
     return True
 
 print("\nSudoku #1)")
