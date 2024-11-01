@@ -7,16 +7,16 @@ def isValid(s: str) -> bool:
     dict = {'(': ')', '[': ']', '{': '}'}
     stack = []
 
-    for i in s:
-        if i in dict.keys():
-            stack.append(i)
+    for val in s:
+        if val in dict.keys():
+            stack.append(val)
         else:
             if stack == []:
                 return False
-            
-            a = stack.pop()
 
-            if i != dict[a]:   
+            key = stack.pop()
+
+            if val != dict[key]:
                 return False
 
     return stack == []
