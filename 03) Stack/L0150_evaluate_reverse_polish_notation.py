@@ -1,10 +1,10 @@
 
 def evalRPN(tokens):
     stack = []
-    symbols = {'*', '+', '-', '/'}
+    operators = {'*', '+', '-', '/'}
 
     for i in tokens:
-        if i not in symbols:
+        if i not in operators:
             stack.append(int(i))
         else:
             second = stack.pop()
