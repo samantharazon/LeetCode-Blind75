@@ -38,6 +38,7 @@ class TreeNode:
 
 ###############################################################
 
+
     def isBalanced(self, root):
         def dfs(root):
             if not root:
@@ -50,10 +51,12 @@ class TreeNode:
             balanced = (left[0] and right[0] and abs(left[1] - right[1]) <= 1)
 
             print(
-                f"Node ({root.value}): BALANCED?\tleft[0]={left[0]}, \tright[0]={right[0]}")
-            print(
-                f"Node ({root.value}): HEIGHT?\tleft[1]= {left[1]}, \tright[1]={right[1]}")
-            print(f"Node ({root.value}): balanced = {balanced}")
+                f"Node ({root.value}), "
+                f"Height at node: {1 + max(left[1], right[1])}, "
+                f"Balanced Val: {abs(left[1] - right[1])}, "
+                f"Balanced T/F: {balanced}"
+            )
+            print(f"Returning [{balanced, 1 + max(left[1], right[1])}]")
             print()
 
             return [balanced, 1 + max(left[1], right[1])]
@@ -170,6 +173,19 @@ print("\n(B) Print Tree")
 tree2.display()
 
 print(f"RESULT: Is the tree balanced? {tree2.isBalanced(tree2)}")
+print("-----------------------------------")
+
+tree3 = TreeNode()
+tree3.insert(50)
+tree3.insert(40)
+tree3.insert(70)
+tree3.insert(60)
+tree3.insert(80)
+
+print("\n(C) Print Tree")
+tree3.display()
+
+print(f"RESULT: Is the tree balanced? {tree3.isBalanced(tree3)}")
 print("-----------------------------------")
 
 print("\n")
