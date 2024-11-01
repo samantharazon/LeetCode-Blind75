@@ -36,7 +36,7 @@ class LinkedList:
         curr.next = newNode
 
 ###############################################################
-# Function to reverse linked list
+# Function to reverse linked list (iterative)
 def reverseLinkedList(head):
     prev = None
     tmp = head
