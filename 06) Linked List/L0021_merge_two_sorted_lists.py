@@ -58,10 +58,9 @@ def mergeLists(l1, l2):
     return dummy.next
 ###############################################################
 
-# Create 2 lists
+# Create 2 lists that will be merged
 listA = LinkedList()
 listB = LinkedList()
-listC = LinkedList()
 
 # Add elements to the list in sorted order
 listA.addToList(5)
@@ -76,7 +75,8 @@ listB.addToList(20)
 print("\nList B: ")
 listB.printList()
 
-# Call the merge function
+# Create 3rd list and call the merge function
+listC = LinkedList()
 listC.head = mergeLists(listA.head, listB.head)
 print("\nMerged Linked List is:")
 listC.printList()
