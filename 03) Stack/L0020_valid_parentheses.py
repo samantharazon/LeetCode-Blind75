@@ -43,3 +43,5 @@ print(f"\ns: {s}")
 result = isValid(s)
 print("s: ", s)
 print("result:", result)
+
+print("\n")
