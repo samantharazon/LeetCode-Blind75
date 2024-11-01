@@ -7,19 +7,22 @@ def validSudoku(board):
 
     for r in range(9):
         for c in range(9):
-            cell_value = board[r][c]
+            cell_val = board[r][c]
 
-            if cell_value == ".":
+            if cell_val == ".":
                 continue
+                
+            square_set = squares[(r//3, c//3)]
 
-            if (cell_value in cols[c] or
-                cell_value in rows[r] or
-                cell_value in squares[(r//3, c//3)]):
+            if (cell_val in cols[c] or
+                cell_val in rows[r] or
+                cell_val in square_set):
                 return False
             
-            cols[c].add(cell_value)
-            rows[r].add(cell_value)
-            squares[(r//3, c//3)].add(cell_value)
+            rows[r].add(cell_val)
+            cols[c].add(cell_val)
+            square_set.add(cell_val)
+    
     return True
 
 print("\nSudoku #1)")
