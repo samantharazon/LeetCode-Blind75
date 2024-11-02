@@ -1,31 +1,32 @@
+# -4=(a)   |  -1=(b)  -1  0  1  2=(c)
+#                L               R
 def threeSum(nums: list[int]) -> list[list[int]]:
     res = []
-    nums.sort()    # -4, -1, -1, 0, 1, 2
+    nums.sort()
 
-    # -4=(a)   |  -1=(b)  -1  0  1  2=(c)
-    #                L               R
-
-    for index, a_value in enumerate(nums):
-        # Find (a)...
-        if index > 0 and a_value == nums[index - 1]:
+    for i in range(len(nums)):
+        # (a)...
+        a_val = nums[i]
+        if i > 0 and a_val == nums[i-1]:
             continue
 
-        l = index + 1
+        # (b) and (c)...
+        l = i + 1
         r = len(nums) - 1
 
-        # Find (b) and (c)...
-        # 2SumII Solution:
         while l < r:
-            sumThree = a_value + nums[l] + nums[r]
-            if sumThree > 0:
+            b_val = nums[l]
+            c_val = nums[r]
+            sum = a_val + b_val + c_val
+
+            if sum > 0:
                 r -= 1
-            elif sumThree < 0:
+            elif sum < 0:
                 l += 1
             else:
-                res.append([a_value, nums[l], nums[r]])
+                res.append([a_val, b_val, c_val])
                 l += 1
-                # if it's same value, keep shifting && don't pass right pointer
-                while nums[l] == nums[l - 1] and l < r:
+                while l < r and nums[l] == nums[l-1]:
                     l += 1
     return res
 
