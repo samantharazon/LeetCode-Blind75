@@ -4,12 +4,14 @@ def maxArea(height: list[int]) -> int:
     r = len(height) - 1
 
     while l < r:
-        # area = width * length
-        area = min(height[l], height[r]) * (r - l)
-        print("length:", min(height[l], height[r]), "* width:", r-l, "= area:", area)
-        res = max(res, area)
+        length =  min(height[l], height[r]) # determined by the shorter of the two lines
+        width = r - l # distance between the two lines
+        area = length * width
+        res = max(res, area) #  maximum area found so far 
 
-        # shift over by whichever of two is the min value
+        print(f"length:{length} * width:{width} = area:{area}")
+
+        # The pointer pointing to the shorter line is moved inward to potentially find a larger area
         if height[l] <= height[r]:
             l += 1
         else:
