@@ -22,7 +22,6 @@ def printLinkedList(head):
         print(current.val, end=" -> ") 
         current = current.next 
 
-# Helper function to create a linked list from a list of values def createLinkedList(values): if not values: return None head = ListNode(values[0]) current = head for value in values[1:]: current.next = ListNode(value) current = current.next return head
 ###############################################################
 def middleNode(head):
     slow = head
