@@ -45,19 +45,19 @@ def reorderList(head):
         curr = after        # move curr
 
     # Merge the two halves
-    firstHalf = head
-    secondHalf = prev # prev points at head of reversed second list
-    while secondHalf.next:
+    first = head
+    second = prev # prev points at head of reversed second list
+    while second.next:
         # Store the next pointers temporarily
-        tempFirstNext = firstHalf.next
-        tempSecondNext = secondHalf.next
+        tmpFirst = first.next
+        tmpSecond = second.next
         
         # Reassign pointers to rearrange the links
-        firstHalf.next = secondHalf
-        firstHalf = tempFirstNext
+        first.next = second
+        first = tmpFirst
         
-        secondHalf.next = firstHalf
-        secondHalf = tempSecondNext
+        second.next = first
+        second = tmpSecond
 ###############################################################
 
 values = [1, 2, 3, 4] 
