@@ -8,14 +8,14 @@ def carFleet(target, position, speed) -> int:
    
     for position, speed in sorted(pairs, reverse=True):  # Sort the pairs based on the position in descending order. This means we process the cars starting from the one closest to the target to the one farthest.
         # print(f"sorted_pairs= \t{sorted(pairs, reverse=True)}, position={position}, speed={speed}, lastFleetArrivalTime={lastFleetArrivalTime}, fleets={fleets}, dest_time={(target - position)/speed}")
-        destination_time = (target - position)/speed # For each car, calculate how long it will take to reach the target. This is done by dividing the positionance left to travel (target - position) by the car’s speed.
-        if destination_time > lastFleetArrivalTime: # When a car's destination_time (the time it takes for that specific car to reach the target) is greater than the lastFleetArrivalTime (current latest fleet's arrival time): It indicates that this car cannot catch up with the fleet ahead of it, and thus it must start a new fleet.
+        destination_time = (target - position)/speed # For each car, calculate how long it will take to reach the target. This is done by getting the the amount left to travel (target - position) and dividing it by the car’s speed.
+        if destination_time > lastFleetArrivalTime: # When a car's destination_time is greater than the lastFleetArrivalTime: It indicates that this car cannot catch up with the fleet ahead of it, and thus it must start a new fleet.
             fleets += 1
             lastFleetArrivalTime = destination_time
 
     return fleets
 
-
+f
 target = 12
 position = [10, 8, 0, 5, 3]
 speed = [2, 4, 1, 1, 3]
