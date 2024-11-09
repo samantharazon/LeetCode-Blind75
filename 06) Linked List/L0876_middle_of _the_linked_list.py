@@ -16,11 +16,13 @@ def createLinkedList(values):
     return head
 
 # Helper function to print the linked list 
-def printLinkedList(head): 
-    current = head 
-    while current: 
-        print(current.val, end=" -> ") 
-        current = current.next 
+def printLinkedList(head):
+    current = head
+    while current:
+        print(current.val, end="")
+        current = current.next
+        if current:
+            print(" -> ", end="")
 
 ###############################################################
 def middleNode(head):
