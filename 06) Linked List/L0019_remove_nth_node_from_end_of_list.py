@@ -31,15 +31,21 @@ def removeNthFromEnd(head, n):
     left = dummy
     right = head
 
+    # Move the right pointer so it is n nodes ahead of the left pointer
     while n > 0:
         right = right.next
         n -= 1
 
+    # Move both pointers until the right pointer reaches the end of the list
+    # This ensures the left pointer is just before the node to be removed
     while right:
         left = left.next
         right = right.next
 
+    # Remove the nth node from the end by skipping it
     left.next = left.next.next
+    
+    # Return the head of the updated list
     return dummy.next
 ###############################################################
 
