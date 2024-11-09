@@ -17,7 +17,6 @@ def createLinkedList(values):
     return head
 
 # Helper function to print the linked list 
-# Helper function to print the linked list without an extra arrow at the end
 def printLinkedList(head):
     current = head
     while current:
