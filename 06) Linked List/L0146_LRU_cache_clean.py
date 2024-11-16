@@ -37,7 +37,6 @@ class LRUCache:
             self.remove(self.cache[key])
         self.cache[key] = Node(key, value)
         self.insert(self.cache[key])
-
         # Remove the least recently used node if the cache exceeds capacity
         if len(self.cache) > self.cap:
             lru = self.left.next
