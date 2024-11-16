@@ -1,12 +1,15 @@
 ##############################################################
 def findDuplicate(nums):
     slow, fast = 0, 0
+
+    # Step 1: Finding the intersection point of the two runners
     while True:
         slow = nums[slow]
         fast = nums[nums[fast]]
         if slow == fast:
             break
-
+    
+    # Step 2: Finding the entrance to the cycle (the duplicate #)
     slow2 = 0
     while True:
         slow = nums[slow]
