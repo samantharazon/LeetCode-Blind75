@@ -46,14 +46,20 @@ class LRUCache:
             self.remove(lru)
             del self.cache[lru.key]
 
-if __name__ == "__main__":
-    lru = LRUCache(2)
-    lru.put(1, 1)
-    lru.put(2, 2)
-    print(lru.get(1))  # should return 1
-    lru.put(3, 3)      # evicts key 2
-    print(lru.get(2))  # should return -1 (not found)
-    lru.put(4, 4)      # evicts key 1
-    print(lru.get(1))  # should return -1 (not found)
-    print(lru.get(3))  # should return 3
-    print(lru.get(4))  # should return 4
+lru = LRUCache(2)
+lru.put(1, 1)
+lru.put(2, 2)
+print("\n(a)")
+print(lru.get(1))  # should return 1
+lru.put(3, 3)      # evicts key 2
+print("\n(b)")
+print(lru.get(2))  # should return -1 (not found)
+lru.put(4, 4)      # evicts key 1
+print("\n(c)")
+print(lru.get(1))  # should return -1 (not found)
+print("\n(d)")
+print(lru.get(3))  # should return 3
+print("\n(e)")
+print(lru.get(4))  # should return 4
+
+print("\n")
