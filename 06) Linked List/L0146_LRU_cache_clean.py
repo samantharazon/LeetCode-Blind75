@@ -1,5 +1,3 @@
-# lru_cache.py
-
 class Node:
     def __init__(self, key, val):
         self.key, self.val = key, val
